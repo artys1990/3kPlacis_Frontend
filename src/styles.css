@@ -1,0 +1,519 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+#app {
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: "Roboto", sans-serif;
+  background-image:
+    linear-gradient(to right, rgb(53, 53, 53, 0.9), rgba(236, 176, 9, 0.7)),
+    url("background_drawing.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.main-header {
+  display: flex;
+  padding: 1rem 3rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.main_logo {
+  width: 100px;
+}
+
+.main-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav ul {
+  display: flex;
+}
+
+.main-nav li {
+  list-style: none;
+  margin: 0.8rem 0.2rem;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.nav-link {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  color: #fff;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 20px;
+  white-space: nowrap;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  background: linear-gradient(135deg, #ffc83c, #a0720e);
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.nav-link.active:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 7px 22px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+/* Hamburger button, hidden on desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile breakpoint */
+@media (max-width: 870px) {
+  .main-header {
+    padding: 0.2rem 1rem;
+    justify-content: space-around;
+  }
+  .phone {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    justify-content: end;
+    max-width: 50px;
+  }
+  .main-nav ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(75vw, 300px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    background: #1a1a1a;
+    padding: 2rem 1.5rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .main-nav ul.open {
+    transform: translateX(0);
+  }
+
+  .main-nav li {
+    flex: none;
+    margin: 0.4rem 0;
+  }
+
+  .nav-link {
+    font-size: 1.4rem;
+    padding: 12px 16px;
+  }
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 10px;
+  min-height: 707px;
+  justify-items: center;
+}
+
+.contacts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacts-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 5px;
+  color: #535353;
+  letter-spacing: 2px;
+}
+
+.contacts-section-container {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+}
+
+.contacts-section-container div {
+  width: 500px;
+  border: 1px solid #ffc83c;
+  border-radius: 10px;
+  padding: 1rem;
+  padding-left: 2rem;
+  margin: 10px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.contacts-section-container h3 {
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: #535353;
+  margin: 5px;
+}
+
+.contacts-map {
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  border: 1px solid #ffc83c;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  /* border-radius: 10px; */
+}
+
+.main-footer {
+  display: flex;
+  color: white;
+  line-height: 1.4;
+  padding: 1.2rem 3rem;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  /* width: 120px; */
+  display: block;
+  max-width: 160px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  margin-top: 0.4rem;
+}
+
+.footer-contacts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.footer-contacts span {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.footer-social span {
+  margin-left: 0.5rem;
+  display: block;
+  text-align: center;
+}
+
+.footer-social img {
+  width: 2rem;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Home page content (index) */
+.quickSearch-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.latest-container {
+  padding: 1rem 1rem;
+  text-align: center;
+}
+
+.latest-container h3 {
+  color: #535353;
+  font-size: 1.4rem;
+}
+
+.latest-cards {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  /* width: 100%; */
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.banners-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+/* browse page */
+
+.card-grid {
+  display: grid;
+  /* The Magic Line: 
+     - "auto-fill" fits as many columns as possible.
+     - "minmax(250px, 1fr)" ensures columns never shrink below 250px, 
+       but split remaining space equally up to 1fr.
+  */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
+
+  /* The Gap between your cards */
+  gap: 16px;
+  justify-content: center;
+  /* Restricts the grid layout width to perfectly cap at 4 columns 
+     Formula: (4 columns * 250px min-width) + (3 gaps * 24px) = 1072px
+  */
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto; /* Centers the whole grid on the screen */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.my-border-color-gold {
+  border-color: #d7a630;
+}
+
+/**** Car info page***/
+.car-title-container {
+  margin: 1rem 0rem 0.2rem 1rem;
+}
+
+.car-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #535353;
+}
+
+.car-price-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #d7a630;
+}
+
+.car-section-title {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #535353;
+}
+
+.car-description-container {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+/* 1. Main Wrapper: Side-by-side by default */
+.car-description-container {
+  display: flex;
+  gap: 40px; /* Space between the two lists */
+  width: 100%;
+}
+
+/* 2. Individual Lists: Make them equal width */
+.two-column-list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 12px 24px;
+}
+
+.two-column-list dt,
+.two-column-list dd {
+  margin: 0;
+  padding-bottom: 12px;
+  /* border-bottom: 1px solid #e0e0e0; */
+  border-bottom: 1px solid #d7a630;
+}
+.two-column-list dt {
+  font-weight: bold;
+  color: #535353;
+}
+
+.two-column-list dd {
+  margin-left: 1rem;
+}
+
+/* 3. Responsive Rules: Stack vertically on mobile */
+@media (max-width: 768px) {
+  .car-description-container {
+    flex-direction: column; /* Stacks the lists on top of each other */
+    gap: 16px; /* Adjusts space between the stacked lists */
+  }
+
+  .contacts-section-container {
+    display: flex;
+    padding: 2px;
+    align-items: center;
+  }
+
+  .contacts-section-container div {
+    width: 100%;
+    border: 1px solid #ffc83c;
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 2rem;
+    margin: 10px;
+    margin-top: 1.2rem;
+  }
+
+  .contacts-map {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .map {
+    width: 100%;
+  }
+}
+
+/***ERRORS***/
+.loadingError {
+  color: rgb(206, 38, 38);
+  font-size: 1.2em;
+}
+
+@media (max-width: 1237px) {
+  .nav-link {
+    padding: 0 8px;
+    font-size: 1rem;
+  }
+  .phone {
+    font-size: 10px;
+  }
+  .phone-icon {
+    display: none;
+  }
+  .contacts-section-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 870px) {
+  .main-nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+  .main_logo {
+    max-width: 80px;
+    padding: 5px;
+  }
+  .main-header {
+    justify-content: space-between;
+  }
+  .nav-link {
+    padding: 4px;
+  }
+  #app {
+    background-image: none;
+    background: linear-gradient(
+      to right,
+      rgb(53, 53, 53, 0.9),
+      rgba(236, 176, 9, 0.7)
+    );
+  }
+
+  .banners-container {
+    flex-direction: column;
+  }
+
+  .main-footer {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .footer-logo {
+    display: none;
+  }
+  .footer-contacts {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 984px) {
+  .phone {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+}

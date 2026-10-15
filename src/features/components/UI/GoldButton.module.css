@@ -1,0 +1,20 @@
+.goldButton {
+  background-color: #d7a630;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 15px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.goldButton:hover {
+  background-color: #535353;
+}
+
+.goldButton:active {
+  background-color: #1e40af;
+}

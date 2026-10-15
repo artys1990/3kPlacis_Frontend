@@ -1,0 +1,125 @@
+.card {
+  width: 280px;
+  /* background: #fff; */
+  /* background: linear-gradient(180deg, #ffffff 0%, #fcfcfc 100%); */
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.imageContainer {
+  position: relative;
+  height: 185px;
+  border-bottom: 3px solid #d7a630;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.year {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #d7a630;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.content {
+  padding: 18px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 22px;
+  color: #222;
+  font-weight: bolder;
+}
+
+.header p {
+  margin-top: 4px;
+  color: #777;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.price {
+  color: #d7a630;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.specs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  text-align: center;
+  gap: 10px;
+}
+
+.specs div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.specs svg {
+  color: #d7a630;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.specs span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.specs small {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  background: #444;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.button:hover {
+  background: #d7a630;
+}

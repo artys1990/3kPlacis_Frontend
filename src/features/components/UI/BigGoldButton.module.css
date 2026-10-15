@@ -1,0 +1,28 @@
+.btn {
+  width: 100%;
+  color: #d7a630;
+  border-radius: 10px;
+  border: 1px solid #d7a630;
+  font-size: 1.2em;
+  padding: 0.6rem 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d7a630;
+  color: white;
+  cursor: pointer;
+}
+
+.inverse {
+  background-color: #d7a630;
+  color: white;
+}
+
+.inverse:hover {
+  color: #444;
+}

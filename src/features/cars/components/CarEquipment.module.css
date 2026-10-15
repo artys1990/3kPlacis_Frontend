@@ -1,0 +1,127 @@
+.equipmentSection {
+  width: 100%;
+}
+
+/* .equipment-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 1rem 0;
+} */
+
+.equipmentEmpty {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+/* Grid: 1 column on mobile, 2 on tablet, 3 on desktop */
+.equipmentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .equipmentGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .equipmentGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Card */
+.equipmentCard {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.equipmentCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.equipmentCategoryTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.75rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #d7a630;
+  /* #e5e7eb; */
+}
+
+.equipmentCount {
+  margin-left: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+/* Item list */
+.equipmentList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.equipmentItem {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #374151;
+}
+
+/* Checkmark drawn with CSS instead of an icon */
+.equipmentItem::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #d7a630;
+  /* #10b981; */
+}
+
+.equipmentItem::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 0.45rem;
+  width: 6px;
+  height: 3px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg);
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 480px) {
+  /* .equipment-title {
+    font-size: 1.1rem;
+  } */
+
+  .equipmentCard {
+    padding: 1rem;
+  }
+
+  .equipmentItem {
+    font-size: 0.875rem;
+  }
+}

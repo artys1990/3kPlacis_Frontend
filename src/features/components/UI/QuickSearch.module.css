@@ -1,0 +1,97 @@
+.searchContainer {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+
+.singleRowForm {
+  display: grid;
+  /* 2 equal columns for selects, 'auto' fits the button text */
+  grid-template-columns: 1fr 1fr auto;
+  gap: 16px;
+  align-items: flex-end; /* Aligns inputs perfectly at the bottom edge */
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  max-width: 800px;
+}
+
+/* Individual Form Item Layout */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Labels */
+.formGroup label {
+  font-family: system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Modernized Dropdowns */
+.formGroup select {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  padding: 10px 14px;
+  color: #1f2937;
+  background-color: rgba(249, 250, 251, 0.1);
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  /* Adjusts appearance in some browsers */
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234B5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px; /* Space for custom arrow */
+}
+
+/* Focus state for Dropdowns */
+.formGroup select:focus {
+  border-color: #666666;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(79, 79, 79, 0.15);
+}
+
+/* The Action Button */
+.submitBtn {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #535353;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 24px; /* Matches height of select padding + border */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.submitBtn:hover {
+  background-color: #d7a630;
+}
+
+.submitBtn:active {
+  background-color: #1e40af;
+}
+
+.submitBtn:disabled {
+  background-color: #727272;
+  cursor: auto;
+}
+
+/* Responsive adjustment for small mobile screens */
+@media (max-width: 640px) {
+  .singleRowForm {
+    grid-template-columns: 1fr; /* Stacks everything into 1 column on mobile */
+  }
+}

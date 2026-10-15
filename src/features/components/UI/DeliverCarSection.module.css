@@ -1,0 +1,116 @@
+.section {
+  --co-ink: #221d17;
+  --co-ink-soft: #857b6c;
+  --co-gold: #ffc83c;
+  --co-gold-deep: #a0720e;
+  --co-line: #d8ccae;
+  --co-panel: #faf6ec00;
+
+  background: var(--co-panel);
+  border-radius: 20px;
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  gap: 24px;
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: var(--co-ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 460px;
+}
+
+.title {
+  font-size: 1.6rem;
+  line-height: 1.15;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.text {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--co-ink-soft);
+  margin: 0;
+  max-width: 52ch;
+}
+
+.actions {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.primaryButton {
+  height: 40px;
+  padding: 0 26px;
+  border-radius: 10px;
+  background: var(--co-gold);
+  color: #241a08;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+.primaryButton:hover {
+  background: var(--co-gold-deep);
+}
+
+.primaryButton:active {
+  transform: translateY(1px);
+}
+
+.address {
+  font-size: 14px;
+  color: var(--co-ink-soft);
+}
+
+.artwork {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artwork svg {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  .section {
+    grid-template-columns: 1fr;
+    padding: 32px 26px;
+    text-align: left;
+  }
+
+  .artwork {
+    order: -1;
+    max-width: 120px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+}
