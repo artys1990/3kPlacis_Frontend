@@ -5,4 +5,3 @@ export async function getBrands() {
 
   return data;
 }
-///dsgvsv

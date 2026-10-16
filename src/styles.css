@@ -512,8 +512,28 @@ main {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 650px) {
   .container {
     width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    
+  }
+  main {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .banners-container {
+     padding-left: 0px;
+    padding-right: 0px;
+  }
+  .card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 320px));
+  }
+}
+
+@media (max-width: 320px) {
+  .card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
   }
 }

@@ -48,3 +48,9 @@
     max-width: 100%;
   }
 }
+@media (max-width: 400px) {
+  .banner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
